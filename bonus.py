@@ -14,13 +14,13 @@
 #%%
 
 while True:
-    name = str(input('Insira o seu nome:'))
+    name: str = str(input('Insira o seu nome:'))
     if name.isalpha():
-        monthly_salary = float(input('Insira seu salario:'))
+        monthly_salary: float = float(input('Insira seu salario:'))
         if isinstance(monthly_salary,float) and monthly_salary > 0:
-            bonus_rate = float(input('Insira o bonus rate:'))
+            bonus_rate: float = float(input('Insira o bonus rate:'))
             if isinstance(bonus_rate, float) and bonus_rate > 0:
-                bonus = monthly_salary * bonus_rate
+                bonus: float = monthly_salary * bonus_rate
                 print(f'Seu bonus sera de {bonus}')
                 break
 
