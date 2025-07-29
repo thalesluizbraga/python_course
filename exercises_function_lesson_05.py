@@ -11,6 +11,21 @@ somar_numeros(lista_numeros)
 # 2 Crie uma função que receba um número como argumento e retorne 
 # True se o número for primo e False caso contrário.
 
+def is_prime(num: int) -> int:
+    if int(num) <= 1:
+        return False
+    if int(num) == 2:
+        return True
+    if int(num) % 2 == 0:
+        return False
+    for i in range(3, int(num ** 0.5) + 1, 2):
+        if int(num) % i == 0:
+            return False
+    return True
+
+is_prime(9)
+
+
 
 
 #%%
@@ -29,10 +44,17 @@ reverter_string(frase)
 # números e um número. A função deve retornar todas as combinações de
 #  pares na lista que somem ao número dado.
 
-
+def encontrar_pares_soma(lista, alvo):
+    pares = []
+    for i in range(len(lista)):
+        for j in range(i + 1, len(lista)):
+            if lista[i] + lista[j] == alvo:
+                pares.append((lista[i], lista[j]))
+    return pares
 
 
 #%%
+
 # 5 Escreva uma função que receba um dicionário e retorne uma lista de
 #  chaves ordenadas
 
